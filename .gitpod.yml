@@ -2,7 +2,7 @@
 #  file: .gitpod.Dockerfile
 
 ports:
-  - port: 8080
+  - port: 7860
     onOpen: open-browser
 
 tasks:
@@ -11,5 +11,6 @@ tasks:
   - init: |
       pip install -r requirements.txt
       bash <(wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh)
-  - command: webui.sh
+      sudo chmod +x webui.sh
+  - command: ./webui.sh
   
